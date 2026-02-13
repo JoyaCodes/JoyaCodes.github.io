@@ -1,47 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Joyashri Thakuria Portfolio</title>
-  <style>
-    body {
-      font-family: Arial;
-      max-width: 800px;
-      margin: auto;
-      padding: 40px;
-      background: #f5f5f5;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyashri Thakuria Portfolio</title>
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    h1 { color: #222; }
-    h2 { color: #555; }
+<style>
+:root {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #222;
+  --accent: #1f3c88;
+}
 
-  </style>
+.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #f5f5f5;
+  --accent: #4da3ff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  padding: 30px;
+}
+
+.header img {
+  width: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+}
+
+.header h1 {
+  margin: 10px 0 5px;
+}
+
+.buttons a {
+  margin: 5px;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.section {
+  background: var(--card);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease;
+}
+
+.section h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+/* Timeline */
+.timeline {
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 15px;
+  animation: slideUp 0.6s ease;
+}
+
+/* Portfolio grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact form */
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+@keyframes fadeIn {
+  from {opacity:0}
+  to {opacity:1}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(20px); opacity:0}
+  to {transform: translateY(0); opacity:1}
+}
+
+@media print {
+  .toggle { display: none; }
+}
+</style>
 </head>
 
 <body>
-  <div class="card">
-    <h1>Joyashri Thakuria</h1>
-    <p>Designer</p>
 
-    <h2>Skills</h2>
-    <ul>
-      <li>Autocad</li>
-      <li>Sketchup</li>
-      <li>V-ray</li>
-      <li>Lumion</li>
-    </ul>
+<button class="toggle" onclick="toggleTheme()">
+<i class="fa fa-moon"></i>
+</button>
 
-    <h2>Experience</h2>
-    <p>2+ years of experience in structural designing and product designing.</p>
+<div class="container">
 
-    <h2>Contact</h2>
-    <p>Email: joyathakuria2@gmail.com</p>
-  </div>
+<div class="header">
+<img src="profile.jpg" alt="Profile Photo">
+<h1>Joyashri Thakuria</h1>
+<p>Civil Engineer</p>
+
+<div class="buttons">
+<a href="https://linkedin.com/in/YOUR-LINK" target="_blank">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+</div>
+</div>
+
+<div class="section">
+<h3>About Me</h3>
+<p>
+Civil Engineering graduate passionate about planning & 3D design.
+Specialized in AutoCAD and SketchUp with focus on practical and aesthetic architecture.
+</p>
+</div>
+
+<div class="section">
+<h3>Experience Timeline</h3>
+
+<div class="timeline">
+<div class="timeline-item">
+<strong>2023 – 2025</strong><br>
+M/S J.K.M. Associate – Structural & design supervision
+</div>
+
+<div class="timeline-item">
+<strong>2025 – Present</strong><br>
+EarthNwe – Modeling, optimization & product styling
+</div>
+</div>
+
+</div>
+
+<div class="section">
+<h3>Portfolio Projects</h3>
+
+<div class="gallery">
+<img src="project1.jpg">
+<img src="project2.jpg">
+<img src="project3.jpg">
+<img src="project4.jpg">
+</div>
+
+</div>
+
+<div class="section">
+<h3>Contact Me</h3>
+
+<form action="https://formsubmit.co/your-email@example.com" method="POST">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="4" placeholder="Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+</div>
+
+</div>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
 </body>
 </html>
